@@ -8,9 +8,15 @@ function App() {
   }
   const submitHandler = e => {
     e.preventDefault();
+
+    if(task !== ""){
     const newTodos =[...todos, task]
     setTodos(newTodos);
     setTask(""); 
+    }
+    else{
+      alert("task Cannot be Empyt");
+    }
   }
   const removeHandler = (indexValue) => {
     const newTodos = todos.filter((todo, index) => index !== indexValue);
